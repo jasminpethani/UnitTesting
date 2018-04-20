@@ -13,6 +13,7 @@
 		CB2EDCF5208A4BC9000046DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2EDCF4208A4BC9000046DE /* Assets.xcassets */; };
 		CB2EDCF8208A4BC9000046DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2EDCF6208A4BC9000046DE /* LaunchScreen.storyboard */; };
 		CB2EDD03208A4BC9000046DE /* UnitTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2EDD02208A4BC9000046DE /* UnitTestingTests.swift */; };
+		CB2EDD0E208A4CB4000046DE /* Extension+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2EDD0D208A4CB4000046DE /* Extension+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +23,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = CB2EDCE9208A4BC9000046DE;
 			remoteInfo = UnitTesting;
+		};
+		CB2EDD5B208A7D3C000046DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB2EDD57208A7D3C000046DE /* MockUIAlertController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 48007C792079A76E007A4AB0;
+			remoteInfo = MockUIAlertController;
+		};
+		CB2EDD5D208A7D4B000046DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB2EDD57208A7D3C000046DE /* MockUIAlertController.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 48007C782079A76E007A4AB0;
+			remoteInfo = MockUIAlertController;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,6 +51,9 @@
 		CB2EDCFE208A4BC9000046DE /* UnitTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2EDD02208A4BC9000046DE /* UnitTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingTests.swift; sourceTree = "<group>"; };
 		CB2EDD04208A4BC9000046DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2EDD0D208A4CB4000046DE /* Extension+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Alert.swift"; sourceTree = "<group>"; };
+		CB2EDD57208A7D3C000046DE /* MockUIAlertController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MockUIAlertController.xcodeproj; path = Source/MockUIAlertController.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CB2EDD5F208A7D76000046DE /* UnitTesting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTesting-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2EDCED208A4BC9000046DE /* AppDelegate.swift */,
+				CB2EDD0D208A4CB4000046DE /* Extension+Alert.swift */,
 				CB2EDCEF208A4BC9000046DE /* ViewController.swift */,
 				CB2EDCF1208A4BC9000046DE /* Main.storyboard */,
 				CB2EDCF4208A4BC9000046DE /* Assets.xcassets */,
@@ -90,10 +109,20 @@
 		CB2EDD01208A4BC9000046DE /* UnitTestingTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB2EDD5F208A7D76000046DE /* UnitTesting-Bridging-Header.h */,
+				CB2EDD57208A7D3C000046DE /* MockUIAlertController.xcodeproj */,
 				CB2EDD02208A4BC9000046DE /* UnitTestingTests.swift */,
 				CB2EDD04208A4BC9000046DE /* Info.plist */,
 			);
 			path = UnitTestingTests;
+			sourceTree = "<group>";
+		};
+		CB2EDD58208A7D3C000046DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB2EDD5C208A7D3C000046DE /* MockUIAlertController.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +156,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CB2EDD5E208A7D4B000046DE /* PBXTargetDependency */,
 				CB2EDD00208A4BC9000046DE /* PBXTargetDependency */,
 			);
 			name = UnitTestingTests;
@@ -166,6 +196,12 @@
 			mainGroup = CB2EDCE1208A4BC9000046DE;
 			productRefGroup = CB2EDCEB208A4BC9000046DE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB2EDD58208A7D3C000046DE /* Products */;
+					ProjectRef = CB2EDD57208A7D3C000046DE /* MockUIAlertController.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB2EDCE9208A4BC9000046DE /* UnitTesting */,
@@ -173,6 +209,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CB2EDD5C208A7D3C000046DE /* MockUIAlertController.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MockUIAlertController.framework;
+			remoteRef = CB2EDD5B208A7D3C000046DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB2EDCE8208A4BC9000046DE /* Resources */ = {
@@ -199,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB2EDD0E208A4CB4000046DE /* Extension+Alert.swift in Sources */,
 				CB2EDCF0208A4BC9000046DE /* ViewController.swift in Sources */,
 				CB2EDCEE208A4BC9000046DE /* AppDelegate.swift in Sources */,
 			);
@@ -219,6 +266,11 @@
 			isa = PBXTargetDependency;
 			target = CB2EDCE9208A4BC9000046DE /* UnitTesting */;
 			targetProxy = CB2EDCFF208A4BC9000046DE /* PBXContainerItemProxy */;
+		};
+		CB2EDD5E208A7D4B000046DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MockUIAlertController;
+			targetProxy = CB2EDD5D208A7D4B000046DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.UnitTestingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./UnitTestingTests/UnitTesting-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTesting.app/UnitTesting";
@@ -403,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.UnitTestingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./UnitTestingTests/UnitTesting-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTesting.app/UnitTesting";

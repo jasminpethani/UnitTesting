@@ -8,29 +8,39 @@
 
 import XCTest
 @testable import UnitTesting
+ 
 
 class UnitTestingTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+	var alertVerifier: QCOMockAlertVerifier!
+
+	// System under test  view controller
+	var sut: ViewController!
+	
+	override func setUp() {
+		super.setUp()
+
+		// setup viewcontrller and load view
+		sut = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+		UIApplication.shared.keyWindow?.rootViewController = sut
+		sut.loadViewIfNeeded()
+	}
+	
+	override func tearDown() {
+		sut = nil
+		alertVerifier = nil
+		super.tearDown()
+	}
+	
+	func test_alert_buttonOK() {
+		alertVerifier = QCOMockAlertVerifier()
+		sut.doSomething()
+		alertVerifier.executeActionForButton(withTitle: "OK")
+	}
+	
+	func test_alert_buttonCancel() {
+		alertVerifier = QCOMockAlertVerifier()
+		sut.doSomething()
+		alertVerifier.executeActionForButton(withTitle: "Cancel")
+	}
+	
 }
